@@ -1,3 +1,4 @@
+/* main body styles, mayy want to change to suit project or make more modular */
 body {
     font-family: var(--font-family);
     margin: 0;
@@ -11,7 +12,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     transition: background-image 0.5s ease-in-out;
-    background-color: var(--main-bg);        
+    background-color: var(--dark-bg);        
 }
 
 /* For HTML5 elements and resets */
