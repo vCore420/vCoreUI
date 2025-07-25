@@ -29,17 +29,7 @@
         
         h3 {
             color: var(--dark-text);
-        }
-        
-        h4{
-            position: fixed;
-            text-align: center;
-            bottom: 55px;
-            left: 20px;
-            max-width: 180px;
-            color: var(--dark-text);
-            font-size: 14px;
-        }
+        }                                   
         
         p {
             color: var(--dark-text);
@@ -70,18 +60,21 @@
                 all text will display of top while putting the effect over the background with in the Card.
             </p>
         </div>
+        
+        <h2>Theme Switcher</h2>
+        <h3><code>class="theme-switch"</code> Used to change between Dark and Light Theme</h3>
+        <div class="theme-switch">
+         <label class="switch">
+           <input type="checkbox" id="themeToggle" />
+           <span class="slider"></span>
+         </label>
+         <span id="themeLabel">Dark Mode</span>
+       </div>
+       
+     
     </div>
     
-    <div class="theme-switch">
-      <label class="switch">
-        <input type="checkbox" id="themeToggle" />
-        <span class="slider"></span>
-      </label>
-      <span id="themeLabel">Dark Mode</span>
-    </div>
-    <h4><code>class="theme-switch"</code> <br>
-    used to change between<br> 
-    Dark and Light Theme</h4>
+    
     
     <svg width="0" height="0" style="position:absolute; overflow:hidden">
       <defs>
