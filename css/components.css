@@ -3,7 +3,7 @@
     background: var(--dark-button);
     color: var(--dark-text);
     border: 1px solid var(--dark-border);
-    border-radius: 8px;
+    border-radius: 24px;
     padding: 0.5em 1.2em;
     font-size: 1rem;
     cursor: pointer;
@@ -17,7 +17,7 @@
     background: var(--light-button);
     color: var(--light-text);
     border: 1px solid var(--light-border);
-    border-radius: 8px;
+    border-radius: 24px;
     padding: 0.5em 1.2em;
     font-size: 1rem;
     cursor: pointer;
@@ -30,7 +30,7 @@
 /* Liquid Glass Effect/Filter */
 .liquid-glass {
     position: relative;
-    border-radius: 24px;
+    border-radius: 28px;
     box-shadow: var(--glass-shadow-dark), var(--glass-shadow-light) inset;
     isolation: isolate;
     overflow: hidden;
@@ -67,21 +67,18 @@
 
 /* Switch for light/dark theme */
 .theme-switch {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  z-index: 999;
+  max-width: 175px;
   display: flex;
-  align-items: center;
   color: var(--dark-text);
   border: 1px solid var(--dark-border);
-  background: var(--dark-bg);
+  background: var(--dark-button);
   border-radius: 24px;
   padding: 0.5em 1em;
 }
 
 body.theme-light {
   --dark-bg: var(--light-bg);
+  --dark-banner: var(--light-banner);
   --dark-text: var(--light-text);
   --dark-border: var(--light-border);
   --dark-button: var(--light-button);
