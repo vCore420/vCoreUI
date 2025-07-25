@@ -8,9 +8,10 @@ It includes design tokens, base styles, and reusable components all designed to 
 
 ## Features
 
-- **Design tokens** for colors, typography, and shadows
-- **Glass effect** reusable component
-- **Theme-ready buttons** (dark & light)
+- **Design Tokens** for Colours, Typography, and Shadows
+- **Theme-ready Buttons and Sliders** (dark & light)
+- **Cursor Effects** Smooth Particle Cursor Effect
+- **Liquid Glass Effect** Reusable Component
 - Easy to extend and customize
 
 ## Getting Started
@@ -34,22 +35,46 @@ It includes design tokens, base styles, and reusable components all designed to 
 
 ## Folder Structure
 
-```html
 vCoreUI/
 ├── css/
 │ ├── tokens.css
 │ ├── base.css
 │ ├── components.css
+│ ├── demo.css
+├── js/
+│ ├── themes.js
+│ ├── cursorEffect.js
+│ ├── demo.js
 ├── assets/
 │ └── branding/
 ├── demo.html
 ├── README.md
-├── LICENSE
-```
 
 ## Usage
 
-Apply classes like `.liquid-glass`, `.button-dark`, and `.button-light` to your HTML elements.
+Apply classes like `.liquid-glass`, `.button-dark`, `.button-light`, and `.main-switch` to your HTML elements.
+
+```html
+<code>class="main-switch"</code></p>
+<div class="main-switch">
+<label class="switch">
+ <input type="checkbox" id="themeToggle" />
+ <span class="slider"></span>
+</label>
+<span id="themeLabel">Dark Mode</span>
+</div>
+```
+
+Apply Cursor effect for all pages with `window.vcoreCursorFlow = new vCoreCursorFlow();` or add in a toggle `const toggle = document.getElementById('cursorEffectToggle');`.
+
+```js
+toggle.addEventListener('change', function() {
+  if (this.checked) {
+    window.vcoreCursorFlow = new vCoreCursorFlow();
+    status.textContent = "On";
+```  
+
+## Glass Effect Filter - Thanks to archisvaze for the Liquid Glass Effect
 
 ```html
 <div class="liquid-glass">
@@ -58,8 +83,6 @@ Apply classes like `.liquid-glass`, `.button-dark`, and `.button-light` to your 
 <button class="button-dark">Dark Button</button>
 <button class="button-light">Light Button</button>
 ```
-
-## Glass Effect Filter - Thanks to archisvaze for the Liquid Glass Effect
 
 To enable the full glass distortion effect, include the following SVG filter at the end of your HTML file:
 
@@ -74,28 +97,8 @@ To enable the full glass distortion effect, include the following SVG filter at 
   </defs>
 </svg>
 ```
-## License
 
-MIT Licence
-
-Copyright (c) 2025 VCore
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+License
+MIT
 
 Designed by vCore420

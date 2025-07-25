@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vCoreUI Design System Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <style>
+        .banner {
+            position: fixed;
+            min-width: 100%;
+            padding: 1em;            
+            z-index: 99;
+            background: var(--dark-banner);
+            box-shadow: var(--dark-shadow);
+        }
+        
+        .container {
+            margin: 8em auto;
+            padding: 5em;
+        }
+        
+        h1 {
+            font-size: 2.4em;
+            color: var(--dark-text);
+            padding-left: 19%;
+        }
+        
+        .description {
+            color: var(--dark-text);
+            font-size: 1.6em;
+            padding-left: 19%;
+        }
+        
+        h2 {
+            margin-top: 2em;
+            font-size: 1.6rem;
+            color: var(--dark-text);
+        }
+        
+        h3 {
+            color: var(--dark-text);
+            font-size: 1.3em;
+        }                                   
+ 
+        
+        p {
+            color: var(--dark-text);
+            font-size: 1.1em;
+        }
+        
+        @media (orientation: portrait) {
+        
+        h1 {
+            padding-left: 8%;
+        }
+        
+        .description {
+            padding-left: 8%;
+        }
+}
+        
+    </style>
+</head>
+<body>
+    <div class="banner">
+        
+        <h1>vCoreUI Demo</h1>
+        <P class="description">This page demonstrates core styles and components<br> from the vCoreUI design library.</p>
+        
+    </div>
+    
+    <div class="container">
+
+        <h2>Switches and Themes</h2>
+        <p>Basic Switches in dark and light themes, <br>
+        Used here to change between page Themes, <br> 
+        Showcasing the light are dark colour palettes. <br>
+        Saves the users option last set option between page reloads.<br>
+        <br>
+        <code>class="main-switch"</code></p>
+        <div class="main-switch">
+        <label class="switch">
+          <input type="checkbox" id="themeToggle" />
+          <span class="slider"></span>
+        </label>
+        <span id="themeLabel">Dark Mode</span>
+        </div>
+        
+        
+        <h2>Cursor Particle Effect</h2>
+        <p>
+          The vCoreUI cursor effect adds a smooth, multi coloured, wispy particle trail to the mouse pointer.<br>
+          Toggle the switch below to activate or deactivate the effect.<br>
+          <b>Note:</b> The effect auto-pauses while scrolling for performance.<br>
+          <br>
+          <code>window.vcoreCursorFlow = new vCoreCursorFlow();</code>
+        </p>
+        <div class="main-switch">
+        <label class="switch">
+          <input type="checkbox" id="cursorEffectToggle" />
+          <span class="slider"></span>
+        </label>
+        <span id="cursorEffectStatus">Off</span>
+        </div>
+       
+       
+        <h2>Buttons</h2>
+        <p>vCoreUI standard buttons with hover effects,<br>
+        presented in both Dark and Light themes.<br>
+        <br>
+        <code>class="dark-button" class="light-button"</code></p>
+        <button class="demo-button-dark">Dark Button</button>
+        <button class="demo-button-light">Light Button</button>
+        
+        
+        <h2>Liquid Glass Effect</h2>
+        <div class="liquid-glass" id="demo-glass-card" style="padding: 2em;">
+          <h3>Liquid Glass Card</h3>
+          <p>This Liquid Glass Card uses the signature <code>class="liquid-glass"</code> effect from vCoreUI.<br>
+            The glass style is highly customizable using design tokens.<br>
+            Can be Used as a filter or a standalone element, <br>
+            all text will display of top while putting the effect over the background with in the Card.<br>
+            <br>
+            Give it a go!<br>
+            Drag this card around the page.
+          </p>
+        </div>
+        
+         
+    </div>
+    
+    <svg width="0" height="0" style="position:absolute; overflow:hidden">
+      <defs>
+        <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%">
+          <feTurbulence id="glass-turbulence" type="fractalNoise" baseFrequency="0.024 0.024" numOctaves="56" seed="95" result="noise" />
+          <feGaussianBlur in="noise" stdDeviation="7" result="blurred" />
+          <feDisplacementMap in="SourceGraphic" in2="blurred" scale="40" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+    
+    <script src="js/themes.js"></script>
+    <script src="js/cursorEffect.js"></script>
+    <script src="js/demo.js"></script>
+</body>
+</html>
