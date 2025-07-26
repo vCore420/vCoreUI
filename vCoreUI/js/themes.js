@@ -3,7 +3,7 @@ const themeLabel = document.getElementById('themeLabel');
 
 function setTheme(isLight) {
   document.body.classList.toggle('theme-light', isLight);
-  themeLabel.textContent = isLight ? 'Light Mode' : 'Dark Mode';
+  themeLabel.textContent = isLight ? 'Theme Toggle - Light' : 'Theme Toggle - Dark';
 }
 
 themeToggle.addEventListener('change', function() {

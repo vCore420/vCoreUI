@@ -181,13 +181,13 @@ let scrollTimeout = null;
 toggle.addEventListener('change', function() {
   if (this.checked) {
     window.vcoreCursorFlow = new vCoreCursorFlow();
-    status.textContent = "On";
+    status.textContent = "Cursor Effect - On";
   } else {
     if (window.vcoreCursorFlow) {
       window.vcoreCursorFlow.destroy();
       window.vcoreCursorFlow = null;
     }
-    status.textContent = "Off";
+    status.textContent = "Cursor Effect - Off";
   }
 });
 

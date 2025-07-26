@@ -26,72 +26,86 @@ body {
 .layout-wrapper {
     margin-left: var(--layout-left);
     margin-right: auto;
-    max-width: 50%; 
+    max-width: 70%; 
     width: 100%;
     box-sizing: border-box;
 }
 
 .banner {
-    position: fixed;
-    width: 100vw;
-    left: 0;
-    top: 0;
-    z-index: 99;
-    background: var(--dark-banner);
-    box-shadow: var(--dark-shadow);
-    min-height: 64px;
+  transition: height 0.32s cubic-bezier(.22,1.61,.36,1), min-height 0.32s cubic-bezier(.22,1.61,.36,1);
+  overflow: hidden;
+  min-height: 160px;
+  height: 160px;
+}
+
+.banner.shrunk {
+  min-height: 80px;
+  height: 80px;
+}
+
+.banner .description {
+  transition: opacity 0.23s;
+  opacity: 1;
+  will-change: opacity;
+}
+
+.banner.fading .description {
+  opacity: 0;
+}
+
+.menu-toggle {
+    position: absolute;
+    right: 4vw;
+    top: 50%;
+}
+
+.slideout-menu {
+    height: 100%;
+    z-index: 10; 
 }
 
 h1, .description {
     padding-left: 0;
+    color: var(--dark-text);
 }
 
 h1 {
-    font-size: 2em;
-    color: var(--dark-text);
+    font-size: 2.2em;
 }
 
 .description {
-    color: var(--dark-text);
-    font-size: 1.2em;
-}
-
-.menu-toggle {
-  position: absolute;
-  right: 4vw;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--dark-text);
-}
-
-.slideout-menu {
-  top: 120px;
-  height: 100%;
+    font-size: 1.4em;
 }
 
 .container {
-    margin-top: 120px; 
+    margin-top: 140px; 
     padding: 0;
     box-sizing: border-box;
 }
 
 h2 {
     color: var(--dark-text);
-    font-size: 1.2rem;
-    margin-top: 10%;
+    font-size: 1.4rem;
+    margin-top: 8%;
 }
 
 h3 {
     color: var(--dark-text);
-    font-size: 1.1em;
+    font-size: 1.3em;
 }                                   
 
 p {
     color: var(--dark-text);
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
-/* Buttons */
+.fine-print {
+    position: absolute;
+    padding: 2em 0;    
+    bottom: 15%;
+    right: 2%;
+}
+/* Buttons used as demos to show both themes at once, main class for buttons is .button*/
 .demo-button-dark {
     background: var(--demo-dark-button);
     color: var(--demo-dark-text);
@@ -120,7 +134,7 @@ p {
     background: var(--demo-light-button-hover);
 }
 
-/* Moveable Glass Card */
+/* Moveable Glass Card for demo purposes */
 #demo-glass-card {
   cursor: grab;
   transition: transform 0.38s cubic-bezier(.22,1.61,.36,1);
@@ -135,15 +149,46 @@ p {
   z-index: 3;
 }
 
+.scroll-sequence {
+  aspect-ratio: 16/9;
+  width: 90%;         /* or any value less than 100% */
+  margin-left: 0;
+  margin-right: auto;
+}
+
 body.noscroll {
   overflow: hidden !important;
   touch-action: none !important;
 }
 
+.noselect,
+.noselect * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+/* portrait propertys */
 @media (orientation: portrait) {  
 
   :root {
     --layout-left: 5%;
+  }
+  
+  .container {
+      margin-top: 200px;
+  }
+  
+  .slideout-menu {
+      width: 30%;
+  }
+  
+  h2 {
+      margin-top: 5%;
+  }
+  
+  .fine-print{
+      bottom: 10%;
   }
 
 }

@@ -1,5 +1,16 @@
+/* main Page Banner */
+.banner {
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background: var(--dark-banner);
+    box-shadow: var(--dark-shadow);
+}
+
 /* Buttons */
-.button-dark {
+.button {
     background: var(--dark-button);
     color: var(--dark-text);
     border: 1px solid var(--dark-border);
@@ -9,22 +20,8 @@
     cursor: pointer;
     transition: background 0.2s;
 }
-.button-dark:hover {
+.button:hover {
     background: var(--dark-button-hover);
-}
-
-.button-light {
-    background: var(--light-button);
-    color: var(--light-text);
-    border: 1px solid var(--light-border);
-    border-radius: 24px;
-    padding: 0.5em 1.2em;
-    font-size: 1.3em;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-.button-light:hover {
-    background: var(--light-button-hover);
 }
 
 /* Liquid Glass Effect/Filter */
@@ -118,6 +115,7 @@
   transform: translateX(20px);
 }
 
+/* Slideout menu toggle button, 3 lines transform to a cross */
 .menu-toggle {
   display: flex;
   flex-direction: column;
@@ -127,14 +125,17 @@
   height: 56px;
   cursor: pointer;
   background: transparent;
+  color: var(--dark-text);
   border: none;
   outline: none;
-  z-index: 12;
   transition: background 0.2s;
+  transform: translateY(-50%);
   padding: 0;
   overflow: visible;  
   position: relative; 
 }
+
+/* 3 lines */
 .menu-toggle .bar {
   width: 28px;
   height: 3px;
@@ -146,6 +147,8 @@
   position: relative; 
   left: 0;
 }
+
+/* Transform 3 lines into cross */
 .menu-toggle.open .bar:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
@@ -164,9 +167,7 @@
   width: 20%;
   height: 100vh;
   background: var(--dark-banner);
-  box-shadow: -8px 0 32px 0 var(--dark-shadow);
   overflow: hidden;
-  z-index: 10;
   pointer-events: none;
   opacity: 0;
   transform: translateY(-30px) scaleY(0.95);
@@ -176,6 +177,7 @@
   mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 100%);
 }
+
 .slideout-menu.open {
   opacity: 1;
   pointer-events: auto;
@@ -183,15 +185,17 @@
   mask-image: linear-gradient(to bottom, black 0%, black 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 100%);
 }
+
 .slideout-menu ul {
   list-style: none;
   margin: 0;
-  padding: 4em 2em;
+  padding: 2em 2em;
   display: flex;
   flex-direction: column;
   gap: 2em;
-  align-items: flex-end;
+  
 }
+
 .slideout-menu li a {
   color: var(--dark-text);
   font-size: 1.4em;
@@ -199,10 +203,28 @@
   letter-spacing: 0.04em;
 }
 
+/* Grey lines to seperate slideout menu options */
 .slideout-menu li {
   width: 100%;
-  border-bottom: 1px solid rgba(236, 232, 250, 0.08); 
+  border-bottom: 1px solid rgba(236, 232, 250, 0.08); /* add to main root */
   margin-bottom: 0.5em;
   padding-bottom: 2em;
   text-align: right;
+}
+
+/* Scroll Video */
+.scroll-sequence {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  aspect-ratio: 4/3;
+  background: #18142a;
+  overflow: hidden;
+}
+.scroll-sequence canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  pointer-events: none;
 }
