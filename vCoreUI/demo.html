@@ -5,75 +5,31 @@
     <title>vCoreUI Design System Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/tokens.css">
-    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/demo.css">
-    <style>
-        .banner {
-            position: fixed;
-            min-width: 100%;
-            padding: 1em;            
-            z-index: 99;
-            background: var(--dark-banner);
-            box-shadow: var(--dark-shadow);
-        }
-        
-        .container {
-            margin: 8em auto;
-            padding: 5em;
-        }
-        
-        h1 {
-            font-size: 2.4em;
-            color: var(--dark-text);
-            padding-left: 19%;
-        }
-        
-        .description {
-            color: var(--dark-text);
-            font-size: 1.6em;
-            padding-left: 19%;
-        }
-        
-        h2 {
-            margin-top: 2em;
-            font-size: 1.6rem;
-            color: var(--dark-text);
-        }
-        
-        h3 {
-            color: var(--dark-text);
-            font-size: 1.3em;
-        }                                   
- 
-        
-        p {
-            color: var(--dark-text);
-            font-size: 1.1em;
-        }
-        
-        @media (orientation: portrait) {
-        
-        h1 {
-            padding-left: 8%;
-        }
-        
-        .description {
-            padding-left: 8%;
-        }
-}
-        
-    </style>
 </head>
 <body>
     <div class="banner">
-        
+      <div class="layout-wrapper">
         <h1>vCoreUI Demo</h1>
-        <P class="description">This page demonstrates core styles and components<br> from the vCoreUI design library.</p>
-        
+        <p class="description">This page demonstrates core styles and components<br> from the vCoreUI design library.</p>
+        <div class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
     </div>
+
+    <nav class="slideout-menu" id="slideoutMenu" aria-hidden="true">
+      <ul>
+        <li><a href="#">Menu Item 1</a></li>
+        <li><a href="#">Menu Item 2</a></li>
+        <li><a href="#">Menu Item 3</a></li>
+      </ul>
+    </nav>
     
-    <div class="container">
+    <div class="container layout-wrapper">
 
         <h2>Switches and Themes</h2>
         <p>Basic Switches in dark and light themes, <br>
@@ -110,7 +66,7 @@
        
         <h2>Buttons</h2>
         <p>vCoreUI standard buttons with hover effects,<br>
-        presented in both Dark and Light themes.<br>
+        presented in both Dark and Light themes here for the demo.<br>
         <br>
         <code>class="dark-button" class="light-button"</code></p>
         <button class="demo-button-dark">Dark Button</button>
@@ -145,6 +101,7 @@
     
     <script src="js/themes.js"></script>
     <script src="js/cursorEffect.js"></script>
+    <script src="js/slideoutMenu.js"></script>
     <script src="js/demo.js"></script>
 </body>
 </html>

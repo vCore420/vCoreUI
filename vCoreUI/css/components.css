@@ -69,7 +69,7 @@
 .main-switch {
   max-width: fit-content;
   display: flex;
-  font-size: 1.3em;
+  font-size: 0.9em;
   color: var(--dark-text);
   border: 1px solid var(--dark-border);
   background: var(--dark-button);
@@ -80,8 +80,8 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 48px;
-  height: 24px;  
+  width: 40px;
+  height: 20px;  
   margin-right: 10px;
 }
 
@@ -107,7 +107,7 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 20px; width: 20px;
+  height: 16px; width: 16px;
   left: 2px; bottom: 2px;
   background-color: var(--dark-bg);
   border-radius: 50%;
@@ -115,5 +115,94 @@
 }
 
 .switch input:checked + .slider:before {
-  transform: translateX(24px);
+  transform: translateX(20px);
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  z-index: 12;
+  transition: background 0.2s;
+  padding: 0;
+  overflow: visible;  
+  position: relative; 
+}
+.menu-toggle .bar {
+  width: 28px;
+  height: 3px;
+  background: currentColor;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(.68,-0.55,.27,1.55);
+  display: block;
+  position: relative; 
+  left: 0;
+}
+.menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+/* Slideout Menu Panel */
+.slideout-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 20%;
+  height: 100vh;
+  background: var(--dark-banner);
+  box-shadow: -8px 0 32px 0 var(--dark-shadow);
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-30px) scaleY(0.95);
+  transition:
+    opacity 0.38s cubic-bezier(.22,1.61,.36,1),
+    transform 0.38s cubic-bezier(.22,1.61,.36,1);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 100%);
+}
+.slideout-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scaleY(1);
+  mask-image: linear-gradient(to bottom, black 0%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 100%);
+}
+.slideout-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 4em 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: flex-end;
+}
+.slideout-menu li a {
+  color: var(--dark-text);
+  font-size: 1.4em;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+.slideout-menu li {
+  width: 100%;
+  border-bottom: 1px solid rgba(236, 232, 250, 0.08); 
+  margin-bottom: 0.5em;
+  padding-bottom: 2em;
+  text-align: right;
 }

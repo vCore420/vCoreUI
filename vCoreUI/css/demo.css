@@ -1,11 +1,94 @@
+/* Misc for demo.html, this is to showcase everything while keeping the actual library styles modular*/
 :root {
-    /* Misc for demo.html ignore as its just used to showcase everything, all of the above is the library tokens */
     --demo-dark-button: #2a2350; 
     --demo-dark-button-hover: #3b2e6d; 
     --demo-dark-text: #ece8fa;
     --demo-light-button: #e7e1fa;        
     --demo-light-button-hover: #f5f2ff;
     --demo-light-text: #352263;
+    --layout-left: 10%;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--dark-bg);        
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.layout-wrapper {
+    margin-left: var(--layout-left);
+    margin-right: auto;
+    max-width: 50%; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.banner {
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    background: var(--dark-banner);
+    box-shadow: var(--dark-shadow);
+    min-height: 64px;
+}
+
+h1, .description {
+    padding-left: 0;
+}
+
+h1 {
+    font-size: 2em;
+    color: var(--dark-text);
+}
+
+.description {
+    color: var(--dark-text);
+    font-size: 1.2em;
+}
+
+.menu-toggle {
+  position: absolute;
+  right: 4vw;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dark-text);
+}
+
+.slideout-menu {
+  top: 120px;
+  height: 100%;
+}
+
+.container {
+    margin-top: 120px; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: var(--dark-text);
+    font-size: 1.2rem;
+    margin-top: 10%;
+}
+
+h3 {
+    color: var(--dark-text);
+    font-size: 1.1em;
+}                                   
+
+p {
+    color: var(--dark-text);
+    font-size: 0.9em;
 }
 
 /* Buttons */
@@ -15,7 +98,7 @@
     border: 1px solid var(--demo-dark-border);
     border-radius: 24px;
     padding: 0.5em 1.2em;
-    font-size: 1.3em;
+    font-size: 1em;
     cursor: pointer;
     transition: background 0.2s;
 }
@@ -29,7 +112,7 @@
     border: 1px solid var(--demo-light-border);
     border-radius: 24px;
     padding: 0.5em 1.2em;
-    font-size: 1.3em;
+    font-size: 1em;
     cursor: pointer;
     transition: background 0.2s;
 }
@@ -37,21 +120,30 @@
     background: var(--demo-light-button-hover);
 }
 
+/* Moveable Glass Card */
 #demo-glass-card {
   cursor: grab;
   transition: transform 0.38s cubic-bezier(.22,1.61,.36,1);
   will-change: transform;
-  z-index: 101; /* above banner */
-  position: relative; /* needed for transform */
+  z-index: 2; 
+  position: relative; 
 }
 
 #demo-glass-card.dragging {
   cursor: grabbing;
   transition: none;
-  z-index: 999;
+  z-index: 3;
 }
 
 body.noscroll {
   overflow: hidden !important;
   touch-action: none !important;
+}
+
+@media (orientation: portrait) {  
+
+  :root {
+    --layout-left: 5%;
+  }
+
 }
