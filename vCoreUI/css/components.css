@@ -1,0 +1,231 @@
+/* Main Page Banner */
+.banner {
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background: var(--dark-banner);
+    box-shadow: var(--dark-shadow);
+}
+
+/* Buttons */
+.button {
+    background: var(--dark-button);
+    color: var(--dark-text);
+    border: 1px solid var(--dark-border);
+    border-radius: 24px;
+    padding: 0.5em 1.2em;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.button:hover {
+    background: var(--dark-button-hover);
+}
+
+/* Liquid Glass Effect/Filter */
+.liquid-glass {
+    position: relative;
+    border-radius: 28px;
+    box-shadow: var(--glass-shadow-dark), var(--glass-shadow-light) inset;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.liquid-glass::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: 28px;
+    pointer-events: none;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    filter: url(#glass-distortion);
+    -webkit-filter: url("#glass-distortion");
+}
+
+.liquid-glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: 28px;
+    background: var(--glass-shadow-light);
+    box-shadow: var(--glass-inset) inset;
+    pointer-events: none;
+}
+
+.liquid-glass > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Switces */
+.main-switch {
+  max-width: fit-content;
+  display: flex;
+  font-size: 0.9em;
+  color: var(--dark-text);
+  border: 1px solid var(--dark-border);
+  background: var(--dark-button);
+  border-radius: 24px;
+  padding: 0.5em 0.8em;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;  
+  margin-right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--dark-text);
+  border-radius: 24px;
+  transition: background-color 0.2s;
+}
+
+.switch input:checked + .slider {
+  background-color: var(--dark-text);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; width: 16px;
+  left: 2px; bottom: 2px;
+  background-color: var(--dark-bg);
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Slideout menu toggle button, 3 lines transform to a cross */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--dark-text);
+  border: none;
+  outline: none;
+  transition: background 0.2s;
+  transform: translateY(-50%);
+  padding: 0;
+  overflow: visible;  
+  position: relative; 
+}
+
+/* 3 lines */
+.menu-toggle .bar {
+  width: 28px;
+  height: 3px;
+  background: currentColor;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(.68,-0.55,.27,1.55);
+  display: block;
+  position: relative; 
+  left: 0;
+}
+
+/* Transform 3 lines into cross */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+/* Slideout Menu Panel */
+.slideout-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 20%;
+  height: 100vh;
+  background: var(--dark-banner);
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-30px) scaleY(0.95);
+  transition:
+    opacity 0.38s cubic-bezier(.22,1.61,.36,1),
+    transform 0.38s cubic-bezier(.22,1.61,.36,1);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 100%);
+}
+
+.slideout-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scaleY(1);
+  mask-image: linear-gradient(to bottom, black 0%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 100%);
+}
+
+.slideout-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 2em 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  
+}
+
+.slideout-menu li a {
+  color: var(--dark-text);
+  font-size: 1.4em;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+/* Grey lines to seperate slideout menu options */
+.slideout-menu li {
+  width: 100%;
+  border-bottom: 1px solid var(--dark-line);
+  margin-bottom: 0.5em;
+  padding-bottom: 2em;
+  text-align: right;
+}
+
+/* Scroll Sequence */
+.scroll-sequence {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  aspect-ratio: 4/3;
+  background: #18142a;
+  overflow: hidden;
+}
+
+.scroll-sequence canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  pointer-events: none;
+}
