@@ -126,3 +126,24 @@
   const observer = new MutationObserver(updateMenuTop);
   observer.observe(banner, { attributes: true, attributeFilter: ['style', 'class'] });
 })();
+
+//Page switcher 
+(function() {
+  const menuLinks = document.querySelectorAll('#slideoutMenu [data-page]');
+  const pages = document.querySelectorAll('.container .page');
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const pageId = "page-" + this.dataset.page;
+      pages.forEach(page => {
+        if (page.id === pageId) {
+          page.classList.add('active');
+        } else {
+          page.classList.remove('active');
+        }
+      });
+      // Optionally: Close menu if needed
+    });
+  });
+})();
