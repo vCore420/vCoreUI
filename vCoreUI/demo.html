@@ -24,16 +24,32 @@
 
     <nav class="slideout-menu" id="slideoutMenu" aria-hidden="true">
       <ul>
-        <li><a href="#">Main Menu</a></li>
-        <li><a href="#">Forum</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Login/Sign Up</a></li>
+          <li><a href="#" data-page="main-demo">Main Demo</a></li>
+          <li><a href="#" data-page="login">Login/Sign Up</a></li>
+          <li><a href="#" data-page="forum">Forum Page</a></li>
+          <li><a href="#" data-page="about">About vCore</a></li>
       </ul>
       <p class="fine-print"><code>class="slideout-menu"</code></p>
     </nav>
     
     <div class="container layout-wrapper">
+        <section class="page active" id="page-main-demo">
+        
+        <br>
+        <h1>Introduction</h1>
+        <p class="description">Elements and Components shown in this demo have been designed to be modular for easy integration into your own Web Projects.<br>
+        <br>
+        Core Tokens are easily customisable in the CSS and you only need to import the elements you require into your JS.<br>
+        <br>
+        This demo doubles as my portfolio as a junior web designer and developer. Showcasing my abilities in design, functionality and flexibility<br>
+        Check out the 'About vCore' page to find out more!<br>
+        <br>
+        The vCoreUi Library is and always will be open source as all good tools should be.<br>
+        Enjoy!</p>
+        <br>
 
+        <h1>Elements</h1>
+        
         <h2>Switches and Themes</h2>
         <p>Basic Switches in dark and light themes, <br>
         Used here to change between page Themes, <br> 
@@ -75,6 +91,7 @@
         <button class="demo-button-dark">Dark Button</button>
         <button class="demo-button-light">Light Button</button>
         
+        
         <h2>Scroll Sequence Video</h2>
         <p>
           The scroll sequence video effect plays a videos frame sequence based on the scroll position of the page.<br>
@@ -91,6 +108,12 @@
           <canvas></canvas>
           <div class="phone-bar"></div>
         </div>
+        <p class="description"><strong>Frame Packager</strong></p>
+        <p>This Library also come with my <strong>Frame_Packager.py</strong> Python script.<br>
+        Place .MP4 Videos in the root folder and run <strong>Frame_Packager.py</strong> to convert the .MP4 into individual frames saved as .WEBP images all packaged into a zip folder ready to be used as an asset for the Scroll Sequence Videos.<br>
+        <br>
+        Refer to the <strong>README.md</strong> documentation provided with the packager to see full requirement needs and uses.
+        </p>
         
         <h2>Liquid Glass Effect</h2>
         <div class="liquid-glass" id="demo-glass-card" style="padding: 2em;">
@@ -98,12 +121,24 @@
           <p>This Liquid Glass Card uses the signature <code>class="liquid-glass"</code> effect from vCoreUI.<br>
             The glass style is highly customizable using design tokens.<br>
             Can be Used as a filter or a standalone element, <br>
-            all text will display of top while putting the effect over the background with in the Card.<br>
-            <br>
-            Give it a go!<br>
-            Drag this card around the page.
+            all text will display of top while putting the effect over the background with in the Card.</p>
+            <h3>Give it a go!</h3>
+            <p>Drag this card around the page.</p>
           </p>
         </div>
+        
+        <img src="assets/branding/branding.png" class="brand-logo">  
+        
+        </section>
+        <section class="page" id="page-login">
+          <!-- Blank for now -->
+        </section>
+        <section class="page" id="page-forum">
+        <!-- Blank for now -->
+        </section>
+        <section class="page" id="page-about">
+       	<!-- Blank for now -->
+        </section>
          
     </div>
     
