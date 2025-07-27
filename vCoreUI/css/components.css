@@ -1,65 +1,65 @@
 /* Main Page Banner */
 .banner {
-    position: fixed;
-    width: 100vw;
-    left: 0;
-    top: 0;
-    z-index: 10;
-    background: var(--dark-banner);
-    box-shadow: var(--dark-shadow);
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: var(--dark-banner);
+  box-shadow: var(--dark-shadow);
 }
 
 /* Buttons */
 .button {
-    background: var(--dark-button);
-    color: var(--dark-text);
-    border: 1px solid var(--dark-border);
-    border-radius: 24px;
-    padding: 0.5em 1.2em;
-    font-size: 1.3em;
-    cursor: pointer;
-    transition: background 0.2s;
+  background: var(--dark-button);
+  color: var(--dark-text);
+  border: 1px solid var(--dark-border);
+  border-radius: 24px;
+  padding: 0.5em 1.2em;
+  font-size: 1.3em;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 .button:hover {
-    background: var(--dark-button-hover);
+  background: var(--dark-button-hover);
 }
 
 /* Liquid Glass Effect/Filter */
 .liquid-glass {
-    position: relative;
-    border-radius: 28px;
-    box-shadow: var(--glass-shadow-dark), var(--glass-shadow-light) inset;
-    isolation: isolate;
-    overflow: hidden;
+  position: relative;
+  border-radius: 28px;
+  box-shadow: var(--glass-shadow-dark), var(--glass-shadow-light) inset;
+  isolation: isolate;
+  overflow: hidden;
 }
 
 .liquid-glass::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    border-radius: 28px;
-    pointer-events: none;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    filter: url(#glass-distortion);
-    -webkit-filter: url("#glass-distortion");
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 28px;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  filter: url(#glass-distortion);
+  -webkit-filter: url("#glass-distortion");
 }
 
 .liquid-glass::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    border-radius: 28px;
-    background: var(--glass-shadow-light);
-    box-shadow: var(--glass-inset) inset;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 28px;
+  background: var(--glass-shadow-light);
+  box-shadow: var(--glass-inset) inset;
+  pointer-events: none;
 }
 
 .liquid-glass > * {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 /* Switces */
