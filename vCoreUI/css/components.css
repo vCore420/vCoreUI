@@ -373,6 +373,53 @@
   max-width: 60vw;
 }
 
+/* Aurora Animated Background */
+.aurora-bg {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  overflow: hidden;
+  padding: 2.5em 2em;
+  margin-bottom: 2em;
+  z-index: 1;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 7%, rgba(0,0,0,1) 93%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 7%, rgba(0,0,0,1) 93%, rgba(0,0,0,0) 100%);
+  background: none;
+}
+
+.aurora-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(120deg, #7f5fff 0%, #32ffd2 40%, #ff7eb3 80%, #7f5fff 100%);
+  opacity: 0.18;
+  filter: blur(32px) saturate(1.2);
+  animation: aurora-move 12s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.aurora-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Aurora Animation Keyframes */
+@keyframes aurora-move {
+  0% {
+    background-position: 0% 50%;
+    filter: blur(32px) saturate(1.2);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: blur(48px) saturate(1.4);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: blur(32px) saturate(1.2);
+  }
+}
+
 @keyframes swirl-fade-out {
   0% {
     opacity: 1;

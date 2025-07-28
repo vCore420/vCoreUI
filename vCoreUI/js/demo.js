@@ -128,3 +128,4 @@
   const observer = new MutationObserver(updateMenuTop);
   observer.observe(banner, { attributes: true, attributeFilter: ['style', 'class'] });
 })();
+
