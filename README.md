@@ -3,7 +3,7 @@
 **vCoreUI** is a modern, professional, and flexible CSS & JS design Libary for web interfaces.  
 It includes design tokens, base styles & themes, reusable modular components, and advanced features for rapid, consistent web development.
 
-**Designed for my own portfolio abd projects for efficiency and consistency,  but can be used however you would like.  
+**Designed for my own portfolio and projects for efficiency and consistency,  but can be used however you would like.  
 Ideas and improvements are welcome — this is a work in progress!**
 
 ---
