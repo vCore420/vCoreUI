@@ -67,6 +67,7 @@ vCoreUI/
 │ ├── cursorEffect.js
 │ ├── slidoutMenu.js
 │ ├── scrollSequence.js
+│ ├── cardGrid.js
 │ ├── demo.js
 ├── assets/
 │ ├── branding/
