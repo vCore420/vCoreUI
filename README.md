@@ -121,9 +121,10 @@ Add a slideout menu to one side of your project with `.slideout-menu`. Cleanly a
 ```html
 <nav class="slideout-menu" id="slideoutMenu" aria-hidden="true">
   <ul>
-    <li><a href="#">Menu 1</a></li>
-    <li><a href="#">Menu 2</a></li>
-    <li><a href="#">Menu 3</a></li>
+    <li><a href="#" data-page="page1">Page One</a></li>
+    <li><a href="#" data-page="page2">Page Two</a></li>
+    <li><a href="#" data-page="page3">Page Three</a></li>
+    <li><a href="#" data-page="page4">Page Four</a></li>
   </ul>
 </nav>
 ```
