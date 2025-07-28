@@ -12,8 +12,7 @@
     <div class="banner">
       <div class="layout-wrapper">
         <h1>vCoreUI Demo</h1>
-        <p class="description">This page demonstrates core styles and components from the vCoreUI design library.</p>
-        <p class="banner-label"><code>class="banner"</code></p>
+        <p class="description"><code>class="banner"</code></p>
         <div class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -37,7 +36,9 @@
         
         <br>
         <h1>Introduction</h1>
-        <p class="description">Elements and Components shown in this demo have been designed to be modular for easy integration into your own Web Projects.<br>
+        <p class="description">This page demonstrates core styles and components from the vCoreUI design library.<br>
+        <br>
+        Elements and Components shown in this demo have been designed to be modular for easy integration into your own Web Projects.<br>
         <br>
         Core Tokens are easily customisable in the CSS and you only need to import the elements you require into your JS.<br>
         <br>
@@ -137,7 +138,45 @@
         <!-- Blank for now -->
         </section>
         <section class="page" id="page-about">
-       	<!-- Blank for now -->
+
+          <h1>About Me - vCore</h1>
+          <p class="description">placeHolder.</p>
+
+          <h2>My Projects</h2>
+          <p>Showcasing various projects I have made or have on the go.</p>
+          <div class="card-grid" id="cardGrid">
+            <div class="card" data-images='["assets/img/proj1-1.jpg","assets/img/proj1-2.jpg"]' data-title="Project One" data-description="A longer write-up about Project One.">
+              <img src="assets/img/proj1-thumb.png" class="card-thumb">
+              <div class="card-label">Project One Test</div>
+            </div>
+
+            <div class="card" data-images='["assets/img/proj1-1.jpg","assets/img/proj1-2.jpg"]' data-title="Project two" data-description="A longer write-up about Project two.">
+              <img src="assets/img/proj1-thumb.png" class="card-thumb">
+              <div class="card-label">Project Two Test</div>
+            </div>
+
+            <div class="card" data-images='["assets/img/proj1-1.jpg","assets/img/proj1-2.jpg"]' data-title="Project three" data-description="A longer write-up about Project three.">
+              <img src="assets/img/proj1-thumb.png" class="card-thumb">
+              <div class="card-label">Project Three Test</div>
+            </div>
+
+          </div>
+          <p class="description"><strong>Card Grid</strong></p>
+          <p>This is a grid layout for showcasing various projects, products, services etc.<br>
+             Each card represents an individual element with an image, title, and description.<br>
+             Dynamically generates grid and card size as more elements are added.<br>
+             Add the card-grid class to your desired element and add as many cards and details as needed.<br>
+            <br>
+            <code>
+               class="card-grid" id="cardGrid"<br>
+               class="card"<br>
+                data-images='["assets/test1-1.jpg","assets/test1-2.jpg"]'<br>
+                data-title=""<br>
+                data-description="."<br>
+               img src="assets/test1-thumb.png" class="card-thumb"<br>
+               class="card-label">Test Card<br>
+               -- add more cards as needed --
+            </code></p>
         </section>
          
     </div>
@@ -157,6 +196,7 @@
     <script src="js/slideoutMenu.js"></script>
     <script src="https://unpkg.com/fflate/umd/index.js"></script>
     <script src="js/scrollSequence.js"></script>
+    <script src="js/cardGrid.js"></script>
     <script src="js/demo.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+// vCoreUI Theme Toggle
+
 const themeToggle = document.getElementById('themeToggle');
 const themeLabel = document.getElementById('themeLabel');
 

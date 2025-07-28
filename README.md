@@ -16,7 +16,8 @@ Ideas and improvements are welcome — this is a work in progress!**
 - **Liquid Glass Effect**: Reusable glassmorphism card/component
 - **Scroll Sequence Animation**: Scroll-driven image sequence (supports ZIP-packed frames)
 - **Page Banner**: Main Page Banner to Act as a Header
-- **Slideout Menu**: Accessible, animated menu panel
+- **Slideout Menu**: Accessible, clean, animated menu panel
+- **Card Grid:** Modular, responsive grid for showcasing projects, products, categories, etc.
 - **Demo Page**: Showcases all features and modularity
 - **Frame Packager**: Python script to convert MP4 to optimized WebP frames and ZIP them for use in scroll sequences
 
@@ -178,7 +179,31 @@ To enable the full glass distortion effect, include the following SVG filter at 
 </svg>
 ```
 
-## Frame Packager (Python Utility)
+### **Card Grid (Showcase Grid)**
+
+A modular, responsive grid for displaying projects, products, or categories.  
+Each card displays an image and label. On click, a modal opens with an image carousel and detailed description.
+
+```html
+<div class="card-grid" id="cardGrid">
+  <div class="card"
+       data-images='["assets/test1-1.jpg","assets/test1-2.jpg"]'
+       data-title="Project One"
+       data-description="A decription for Test One.">
+    <img src="assets/test1-thumb.png" class="card-thumb">
+    <div class="card-label">Test One</div>
+  </div>
+  <!-- Add more cards as needed -->
+</div>
+```
+
+**Features:**
+- Modular, responsive grid for showcasing projects, products, or categories
+- Each card displays an image and label
+- Modal preview with image carousel and description
+- Highly modular for any content type
+
+## Bonus Frame Packager (Python Utility)
 
 **Convert MP4 videos to optimized WebP frames and ZIP them for use in scroll sequences.**
 

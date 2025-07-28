@@ -1,3 +1,5 @@
+// vCoreUI Scroll Sequence
+
 class ScrollSequence {
   constructor(container) {
     this.container = container;

@@ -1,3 +1,5 @@
+// vCoreUI Cursor Effect
+
 class vCoreCursorFlow {
   constructor(options = {}) {
     this.colorLight =
